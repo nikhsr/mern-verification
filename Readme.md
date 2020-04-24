@@ -1,5 +1,5 @@
-#Authentication With Mongo DB, Express, Node and React
-Add .env in root of server
+#Authentication With Mongo DB, Express, Node and React \n
+Add .env in root of server \n
 with content-
 
 DB='mongodb+srv:link'
