@@ -13,7 +13,6 @@
   "author": "nikhsr",
   "license": "ISC",
   "dependencies": {
-    
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
@@ -25,6 +24,7 @@
     "express-async-errors": "^3.1.1",
     "express-session": "^1.15.6",
     "helmet": "^3.15.0",
+    "heroku-cli": "^7.0.9",
     "joi": "^13.4.0",
     "joi-objectid": "^2.0.0",
     "moment": "^2.22.2",
