@@ -11,6 +11,7 @@
     "joi-objectid": "^2.0.0",
     "ramda": "^0.26.0",
     "react": "^16.5.2",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",

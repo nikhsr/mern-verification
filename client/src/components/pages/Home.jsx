@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Alert from 'react-bootstrap/Alert';
 class Home extends Component {
   render() {
     return (
-      <div className='container'>
-        <p>Hello there,</p>
-      </div>
+      <Alert variant='success'>
+        <div className='container'>
+          <p>Hello there</p>
+        </div>
+      </Alert>
     );
   }
 }
