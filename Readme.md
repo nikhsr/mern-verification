@@ -10,6 +10,6 @@ GMAIL_PASS= 'your_email_password' \
 
 Add .env.development in root of your client folder \
 with content- \
-\
+
 REACT_APP_API_URL=http://localhost:3900/api
 
