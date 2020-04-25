@@ -8,25 +8,25 @@ import {
   resendConfirmation,
   resetRegister,
   sendResetPasswordLink,
-  resetPassword
+  resetPassword,
 } from '../../api/index';
 import { login, logout } from '../actions/user';
 
-export const attemptLogin = user => async dispatch => {
-  return await postLogin(user).then(res => {
+export const attemptLogin = (user) => async (dispatch) => {
+  return await postLogin(user).then((res) => {
     dispatch(login(res.data.user));
-    dispatch(push('/home'));
+    dispatch(push('/my-profile'));
     return res.data;
   });
 };
 
-export const attemptSendResetPasswordLink = email => async dispatch => {
+export const attemptSendResetPasswordLink = (email) => async (dispatch) => {
   return await sendResetPasswordLink(email).catch(
     dispatch(push('/login/forgot'))
   );
 };
 
-export const attemptResetPassword = (password, token) => async dispatch => {
+export const attemptResetPassword = (password, token) => async (dispatch) => {
   return await resetPassword(password, token)
     .then(() => {
       dispatch(push('/login'));
@@ -34,25 +34,26 @@ export const attemptResetPassword = (password, token) => async dispatch => {
     .catch(dispatch(push(`/login/reset/${token}`)));
 };
 
-export const attemptLogout = () => dispatch =>
-  postLogout().then(res => {
+export const attemptLogout = () => (dispatch) =>
+  postLogout().then((res) => {
     dispatch(logout());
-    dispatch(push('/login'));
+    dispatch(push('/home'));
     return res.data;
   });
 
-export const attemptRegister = newUser => async dispatch => {
+export const attemptRegister = (newUser) => async (dispatch) => {
   return await postRegister(newUser).catch(dispatch(push('/register')));
 };
 
-export const attemptGetConfirmation = token => dispatch =>
+export const attemptGetConfirmation = (token) => (dispatch) =>
   getConfirmation(token)
     .then(() => {
       return dispatch(push('/login'));
     })
     .catch(dispatch(push('/register')));
 
-export const attemptResendConfirmation = email => dispatch =>
+export const attemptResendConfirmation = (email) => (dispatch) =>
   resendConfirmation(email).catch(dispatch(push('/register')));
 
-export const attemptResetRegister = email => dispatch => resetRegister(email);
+export const attemptResetRegister = (email) => (dispatch) =>
+  resetRegister(email);
